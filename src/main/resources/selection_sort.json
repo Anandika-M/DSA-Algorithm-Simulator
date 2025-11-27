@@ -19,7 +19,8 @@
     {
       "id": "process",
       "label": "General Step-by-Step Process",
-      "content": "```mermaid\nflowchart TD\n    A[Start Selection Sort] --> B[Initialize i = 0]\n    B --> C{i < n-1?}\n    C -->|No| Z[Array Sorted]\n    C -->|Yes| D[Set min_index = i]\n    D --> E[Initialize j = i+1]\n    E --> F{j < n?}\n    F -->|No| H[Swap arr[i] and arr[min_index]]\n    F -->|Yes| G{arr[j] < arr[min_index]?}\n    G -->|Yes| I[Set min_index = j]\n    G -->|No| J[Increment j]\n    I --> J\n    J --> F\n    H --> K[Increment i]\n    K --> C\n```\n\n**Process Breakdown:**\n1. Start with the entire array as unsorted\n2. Find the minimum element in the unsorted array\n3. Swap it with the first element of the unsorted array\n4. Move the boundary between sorted and unsorted one element to the right\n5. Repeat until the entire array is sorted"
+      "content": "```mermaid\nflowchart TD\n    A[\"Start Selection Sort\"] --> B[\"Set current position as min_index\"]\n    B --> C[\"Search remaining unsorted part for smallest element\"]\n    C --> D{\"Is smaller element found?\"}\n    D -->|Yes| E[\"Update min_index to new smallest element\"]\n    D -->|No| F[\"Keep current min_index\"]\n    E --> F\n    F --> G[\"Swap element at current position with element at min_index\"]\n    G --> H{\"More positions left?\"}\n    H -->|Yes| B\n    H -->|No| I[\"Array is sorted\"]\n    I --> J[\"End\"]\n```"
+
     },
     {
       "id": "example",

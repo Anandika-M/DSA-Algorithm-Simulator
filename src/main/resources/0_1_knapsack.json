@@ -1,0 +1,46 @@
+{
+  "algorithm": {
+    "id": "zero_one_knapsack",
+    "name": "0/1 Knapsack Problem",
+    "category": "Dynamic Programming",
+    "description": "A classic optimization problem where items have weights and values, and the goal is to select a subset of items that maximizes total value without exceeding a given weight capacity. Each item can be either taken (1) or left (0)."
+  },
+  "sections": [
+    {
+      "id": "analogy",
+      "label": "Analogy",
+      "content": "Imagine you're going on a hiking trip and can only carry a backpack with limited weight capacity. You have various items like a tent, sleeping bag, food, etc., each with different weights and importance (value). You need to choose which items to pack to maximize the usefulness of your backpack without exceeding the weight limit. You can't take fractions of items - it's all or nothing for each item."
+    },
+    {
+      "id": "concept",
+      "label": "Concept",
+      "content": "The 0/1 Knapsack problem is a combinatorial optimization problem where we have a set of items, each with a weight and value, and a knapsack with maximum weight capacity. The goal is to select items such that the total weight doesn't exceed capacity and the total value is maximized.\n\n**Key Idea:** For each item, we have two choices - either include it or exclude it. We use dynamic programming to build up the solution by considering items one by one and capacities from 0 to maximum capacity."
+    },
+    {
+      "id": "process",
+      "label": "General Step-by-Step Process",
+      "content": "```mermaid\nflowchart TD\n    A[\"Start 0/1 Knapsack\"] --> B[\"Create DP table:\nrows = items + 1\ncols = capacity + 1\"]\n    B --> C[\"Initialize first row & column to 0\"]\n    C --> D[\"For each item i and capacity c\"]\n    D --> E{\"Can item i be included?\nweight[i] ≤ c?\"}\n    E -->|No| F[\"Exclude item i:\ndpi, c = dpi-1, c\"]\n    E -->|Yes| G[\"Compare:\nExclude: dpi-1, c\nInclude: value[i] + dpi-1, c-weight[i]\"]\n    G --> H[\"Take maximum value\"]\n    H --> I{\"More items/capacities?\"}\n    F --> I\n    I -->|Yes| D\n    I -->|No| J[\"Return dpm, n\nbottom-right cell\"]\n    J --> K[\"End\"]\n```"
+    },
+    {
+      "id": "example",
+      "label": "Example Problem",
+      "content": "**Input:**\n- Capacity: 7\n- Items: \n  - Item 1: weight=1, value=1\n  - Item 2: weight=3, value=4\n  - Item 3: weight=4, value=5\n  - Item 4: weight=5, value=7\n\n**DP Table Construction:**\n\n| Item \\ Capacity | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |\n|-----------------|---|---|---|---|---|---|---|---|\n| 0 (no items)    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n| 1 (w=1, v=1)    | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |\n| 2 (w=3, v=4)    | 0 | 1 | 1 | 4 | 5 | 5 | 5 | 5 |\n| 3 (w=4, v=5)    | 0 | 1 | 1 | 4 | 5 | 6 | 6 | 9 |\n| 4 (w=5, v=7)    | 0 | 1 | 1 | 4 | 5 | 7 | 8 | 9 |\n\n**Optimal Solution:** Maximum value = 9\n**Items selected:** Item 2 (value=4) + Item 4 (value=7) = 11 weight, but wait...\nActually: Item 2 (w=3, v=4) + Item 3 (w=4, v=5) = Total value 9, weight 7"
+    },
+    {
+      "id": "properties",
+      "label": "Algorithm Properties",
+      "content": "### Time Complexity:\n- **O(n×W)** - where n is number of items, W is capacity\n- **Pseudopolynomial** - depends on numeric value of W\n\n### Space Complexity:\n- **O(n×W)** - for full DP table\n- **O(W)** - optimized with 1D array\n\n### Problem Type:\n- **NP-Hard** - but solvable in pseudopolynomial time\n- **Combinatorial Optimization**\n\n### When to Use 0/1 Knapsack:\n\n**✅ Suitable for:**\n- Resource allocation problems\n- Investment portfolio optimization\n- Cutting stock problems\n- Any selection problem with constraints\n- Budget allocation\n\n**❌ Not suitable for:**\n- Very large capacities (W > millions)\n- Problems where fractional items are allowed\n- Real-time applications with large inputs\n\n### Variations:\n1. **Fractional Knapsack** - items can be divided (greedy solution)\n2. **Unbounded Knapsack** - unlimited copies of each item\n3. **Multiple Knapsack** - multiple containers\n4. **Multi-dimensional** - multiple constraints\n\n### Optimization Tips:\n1. **Use 1D DP array** to reduce space complexity\n2. **Sort items** by value/weight ratio for early termination\n3. **Branch and Bound** for large instances\n4. **Meet in the Middle** for medium-sized problems\n\n### Common Applications:\n1. **Resource Allocation** - budget, manpower, equipment\n2. **Project Selection** - choose projects within budget\n3. **Portfolio Optimization** - select investments\n4. **Cutting Stock** - minimize waste in material cutting\n5. **Loading Problems** - truck, ship, container loading"
+    }
+  ],
+  "code_examples": {
+    "python": "def knapsack_01(weights, values, capacity):\n    n = len(weights)\n    dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n    \n    for i in range(1, n + 1):\n        for w in range(1, capacity + 1):\n            if weights[i-1] <= w:\n                dp[i][w] = max(dp[i-1][w], values[i-1] + dp[i-1][w - weights[i-1]])\n            else:\n                dp[i][w] = dp[i-1][w]\n    \n    return dp[n][capacity]\n\n# Optimized space version\ndef knapsack_01_optimized(weights, values, capacity):\n    n = len(weights)\n    dp = [0] * (capacity + 1)\n    \n    for i in range(n):\n        for w in range(capacity, weights[i] - 1, -1):\n            dp[w] = max(dp[w], values[i] + dp[w - weights[i]])\n    \n    return dp[capacity]\n\n# Example usage\nweights = [1, 3, 4, 5]\nvalues = [1, 4, 5, 7]\ncapacity = 7\nprint(knapsack_01(weights, values, capacity))  # Output: 9",
+    "javascript": "function knapsack01(weights, values, capacity) {\n    const n = weights.length;\n    const dp = Array(n + 1).fill().map(() => Array(capacity + 1).fill(0));\n    \n    for (let i = 1; i <= n; i++) {\n        for (let w = 1; w <= capacity; w++) {\n            if (weights[i-1] <= w) {\n                dp[i][w] = Math.max(dp[i-1][w], values[i-1] + dp[i-1][w - weights[i-1]]);\n            } else {\n                dp[i][w] = dp[i-1][w];\n            }\n        }\n    }\n    \n    return dp[n][capacity];\n}\n\n// Optimized space version\nfunction knapsack01Optimized(weights, values, capacity) {\n    const n = weights.length;\n    const dp = Array(capacity + 1).fill(0);\n    \n    for (let i = 0; i < n; i++) {\n        for (let w = capacity; w >= weights[i]; w--) {\n            dp[w] = Math.max(dp[w], values[i] + dp[w - weights[i]]);\n        }\n    }\n    \n    return dp[capacity];\n}\n\n// Example usage\nconst weights = [1, 3, 4, 5];\nconst values = [1, 4, 5, 7];\nconst capacity = 7;\nconsole.log(knapsack01(weights, values, capacity));  // Output: 9",
+    "java": "public class Knapsack01 {\n    public static int knapsack(int[] weights, int[] values, int capacity) {\n        int n = weights.length;\n        int[][] dp = new int[n + 1][capacity + 1];\n        \n        for (int i = 1; i <= n; i++) {\n            for (int w = 1; w <= capacity; w++) {\n                if (weights[i-1] <= w) {\n                    dp[i][w] = Math.max(dp[i-1][w], \n                                      values[i-1] + dp[i-1][w - weights[i-1]]);\n                } else {\n                    dp[i][w] = dp[i-1][w];\n                }\n            }\n        }\n        \n        return dp[n][capacity];\n    }\n    \n    // Optimized space version\n    public static int knapsackOptimized(int[] weights, int[] values, int capacity) {\n        int n = weights.length;\n        int[] dp = new int[capacity + 1];\n        \n        for (int i = 0; i < n; i++) {\n            for (int w = capacity; w >= weights[i]; w--) {\n                dp[w] = Math.max(dp[w], values[i] + dp[w - weights[i]]);\n            }\n        }\n        \n        return dp[capacity];\n    }\n}",
+    "cpp": "#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint knapsack01(vector<int>& weights, vector<int>& values, int capacity) {\n    int n = weights.size();\n    vector<vector<int>> dp(n + 1, vector<int>(capacity + 1, 0));\n    \n    for (int i = 1; i <= n; i++) {\n        for (int w = 1; w <= capacity; w++) {\n            if (weights[i-1] <= w) {\n                dp[i][w] = max(dp[i-1][w], values[i-1] + dp[i-1][w - weights[i-1]]);\n            } else {\n                dp[i][w] = dp[i-1][w];\n            }\n        }\n    }\n    \n    return dp[n][capacity];\n}\n\n// Optimized space version\nint knapsack01Optimized(vector<int>& weights, vector<int>& values, int capacity) {\n    int n = weights.size();\n    vector<int> dp(capacity + 1, 0);\n    \n    for (int i = 0; i < n; i++) {\n        for (int w = capacity; w >= weights[i]; w--) {\n            dp[w] = max(dp[w], values[i] + dp[w - weights[i]]);\n        }\n    }\n    \n    return dp[capacity];\n}"
+  },
+  "metadata": {
+    "difficulty": "Intermediate",
+    "last_updated": "2024-01-15",
+    "tags": ["dynamic-programming", "optimization", "np-hard", "combinatorial"]
+  }
+}

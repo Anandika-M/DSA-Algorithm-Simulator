@@ -19,8 +19,8 @@
     {
       "id": "process",
       "label": "General Step-by-Step Process",
-      "content": "```mermaid\nflowchart TD\n    A[Start Merge Sort] --> B{array has more than<br>one element?}\n    B -->|No| C[Return array]\n    B -->|Yes| D[Find middle index: mid]\n    D --> E[Recursively sort left half:<br>left = mergeSortarr, left, mid]\n    D --> F[Recursively sort right half:<br>right = mergeSortarr, mid+1, right]\n    E --> G[Merge sorted halves]\n    F --> G\n    G --> H[Return merged sorted array]\n\n    subgraph Merge Process\n        I[Initialize pointers i=0, j=0, k=0] --> J{i < left.length AND<br>j < right.length?}\n        J -->|Yes| K{left[i] <= right[j]?}\n        K -->|Yes| L[Add left[i] to result<br>Increment i]\n        K -->|No| M[Add right[j] to result<br>Increment j]\n        L --> N[Increment k] --> J\n        M --> N\n        J -->|No| O[Add remaining elements<br>from left or right]\n        O --> P[Return merged array]\n    end\n```\n\n**Process Breakdown:**\n1. **Divide:** Split the array into two halves\n2. **Conquer:** Recursively sort both halves\n3. **Combine:** Merge the two sorted halves into one sorted array\n4. **Base Case:** Arrays of size 0 or 1 are already sorted"
-    },
+      "content": "```mermaid\nflowchart TD\n    A[\"Start Merge Sort\"] --> B{\"Is array size > 1?\"}\n    B -->|No| C[\"Return array (already sorted)\"]\n    B -->|Yes| D[\"Split array into left and right halves\"]\n    D --> E[\"Recursively apply Merge Sort on left half\"]\n    D --> F[\"Recursively apply Merge Sort on right half\"]\n    E --> G[\"Merge two sorted halves\"]\n    F --> G\n    G --> H[\"Return merged sorted array\"]\n    H --> I[\"End\"]\n```"
+   },
     {
       "id": "example",
       "label": "Example Sorting",

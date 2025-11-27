@@ -1,0 +1,46 @@
+{
+  "algorithm": {
+    "id": "pascal_triangle",
+    "name": "Pascal's Triangle",
+    "category": "Dynamic Programming",
+    "description": "A triangular array of binomial coefficients where each number is the sum of the two numbers directly above it. Used in combinatorics, probability, and algebra."
+  },
+  "sections": [
+    {
+      "id": "analogy",
+      "label": "Analogy",
+      "content": "Imagine building a pyramid of numbers where each brick sits on two bricks below it, and its value is the sum of those two supporting bricks. The foundation has just one brick with value 1. Each level builds upon the previous one, creating a beautiful symmetrical structure that holds many mathematical secrets within its pattern."
+    },
+    {
+      "id": "concept",
+      "label": "Concept",
+      "content": "Pascal's Triangle is a mathematical construct where:\n- The first row has a single number: 1\n- Each subsequent row starts and ends with 1\n- Each interior number is the sum of the two numbers directly above it\n\n**Mathematical Definition:** The number at position (n, k) is the binomial coefficient C(n, k) = n! / (k! × (n-k)!), which represents the number of ways to choose k items from n items."
+    },
+    {
+      "id": "process",
+      "label": "General Step-by-Step Process",
+      "content": "```mermaid\nflowchart TD\n    A[\"Start Pascal's Triangle\"] --> B[\"Initialize triangle with first row: 1\"]\n    B --> C[\"For each row from 1 to n-1\"]\n    C --> D[\"Create new row starting with 1\"]\n    D --> E[\"For each position in middle of row\"]\n    E --> F[\"value = previous_rowi-1 + previous_rowi\"]\n    F --> G{\"More middle positions?\"}\n    G -->|Yes| E\n    G -->|No| H[\"Add final 1 to row\"]\n    H --> I[\"Add row to triangle\"]\n    I --> J{\"More rows?\"}\n    J -->|Yes| C\n    J -->|No| K[\"Return complete triangle\"]\n    K --> L[\"End\"]\n```"
+    },
+    {
+      "id": "example",
+      "label": "Example Construction",
+      "content": "**Pascal's Triangle for 5 rows:**\n\n```\nRow 0:         1\nRow 1:        1 1\nRow 2:       1 2 1\nRow 3:      1 3 3 1\nRow 4:     1 4 6 4 1\nRow 5:    1 5 10 10 5 1\n```\n\n**Construction Process:**\n- Row 0: [1]\n- Row 1: [1, 1] (start and end with 1)\n- Row 2: [1, 1+1=2, 1] = [1, 2, 1]\n- Row 3: [1, 1+2=3, 2+1=3, 1] = [1, 3, 3, 1]\n- Row 4: [1, 1+3=4, 3+3=6, 3+1=4, 1] = [1, 4, 6, 4, 1]\n\n**Key Observations:**\n- Symmetrical around vertical axis\n- Sum of each row = 2^row_number\n- Diagonal patterns represent various sequences"
+    },
+    {
+      "id": "properties",
+      "label": "Algorithm Properties",
+      "content": "### Time Complexity:\n- **O(n²)** - to generate n rows\n\n### Space Complexity:\n- **O(n²)** - to store entire triangle\n- **O(n)** - to generate a specific row\n\n### Mathematical Properties:\n- **Binomial Coefficients**: C(n, k) = n! / (k! × (n-k)!)\n- **Symmetry**: C(n, k) = C(n, n-k)\n- **Recurrence Relation**: C(n, k) = C(n-1, k-1) + C(n-1, k)\n\n### When to Use Pascal's Triangle:\n\n**✅ Suitable for:**\n- Combinatorial calculations\n- Probability problems\n- Binomial expansions\n- Algorithmic puzzles\n- Educational demonstrations\n\n**❌ Not suitable for:**\n- Very large n values (due to O(n²) complexity)\n- Memory-constrained environments\n- Real-time calculations for large n\n\n### Key Applications:\n1. **Combinatorics** - calculating combinations\n2. **Probability** - binomial distributions\n3. **Algebra** - binomial theorem expansions\n4. **Computer Science** - dynamic programming problems\n5. **Number Theory** - exploring number patterns\n\n### Interesting Patterns:\n1. **Horizontal Sums**: 2^n\n2. **Diagonal Sums**: Fibonacci sequence\n3. **Prime Numbers**: If p is prime, all interior elements in row p are divisible by p\n4. **Powers of 11**: Rows approximate powers of 11\n\n### Optimization Tips:\n1. **Use 1D array** for current row only when generating specific row\n2. **Memoization** for frequently accessed binomial coefficients\n3. **Mathematical formulas** for direct calculation when possible\n4. **Symmetry** to compute only half the triangle"
+    }
+  ],
+  "code_examples": {
+    "python": "def generate_pascal_triangle(num_rows):\n    triangle = []\n    \n    for row_num in range(num_rows):\n        row = [1] * (row_num + 1)\n        \n        for i in range(1, row_num):\n            row[i] = triangle[row_num - 1][i - 1] + triangle[row_num - 1][i]\n        \n        triangle.append(row)\n    \n    return triangle\n\ndef get_pascal_row(row_index):\n    row = [1] * (row_index + 1)\n    \n    for i in range(1, row_index):\n        row[i] = row[i - 1] * (row_index - i + 1) // i\n    \n    return row\n\n# Example usage\nprint(\"Pascal's Triangle (5 rows):\")\ntriangle = generate_pascal_triangle(5)\nfor row in triangle:\n    print(row)\n\nprint(\"\\n5th row:\", get_pascal_row(4))  # Output: [1, 4, 6, 4, 1]",
+    "javascript": "function generatePascalTriangle(numRows) {\n    const triangle = [];\n    \n    for (let rowNum = 0; rowNum < numRows; rowNum++) {\n        const row = new Array(rowNum + 1).fill(1);\n        \n        for (let i = 1; i < rowNum; i++) {\n            row[i] = triangle[rowNum - 1][i - 1] + triangle[rowNum - 1][i];\n        }\n        \n        triangle.push(row);\n    }\n    \n    return triangle;\n}\n\nfunction getPascalRow(rowIndex) {\n    const row = new Array(rowIndex + 1).fill(1);\n    \n    for (let i = 1; i < rowIndex; i++) {\n        row[i] = row[i - 1] * (rowIndex - i + 1) / i;\n    }\n    \n    return row;\n}\n\n// Example usage\nconsole.log(\"Pascal's Triangle (5 rows):\");\nconst triangle = generatePascalTriangle(5);\ntriangle.forEach(row => console.log(row));\n\nconsole.log(\"5th row:\", getPascalRow(4));  // Output: [1, 4, 6, 4, 1]",
+    "java": "import java.util.*;\n\npublic class PascalTriangle {\n    public static List<List<Integer>> generatePascalTriangle(int numRows) {\n        List<List<Integer>> triangle = new ArrayList<>();\n        \n        for (int rowNum = 0; rowNum < numRows; rowNum++) {\n            List<Integer> row = new ArrayList<>();\n            \n            for (int i = 0; i <= rowNum; i++) {\n                if (i == 0 || i == rowNum) {\n                    row.add(1);\n                } else {\n                    int value = triangle.get(rowNum - 1).get(i - 1) \n                              + triangle.get(rowNum - 1).get(i);\n                    row.add(value);\n                }\n            }\n            \n            triangle.add(row);\n        }\n        \n        return triangle;\n    }\n    \n    public static List<Integer> getPascalRow(int rowIndex) {\n        List<Integer> row = new ArrayList<>();\n        row.add(1);\n        \n        for (int i = 1; i <= rowIndex; i++) {\n            long value = (long) row.get(i - 1) * (rowIndex - i + 1) / i;\n            row.add((int) value);\n        }\n        \n        return row;\n    }\n}",
+    "cpp": "#include <vector>\nusing namespace std;\n\nvector<vector<int>> generatePascalTriangle(int numRows) {\n    vector<vector<int>> triangle;\n    \n    for (int rowNum = 0; rowNum < numRows; rowNum++) {\n        vector<int> row(rowNum + 1, 1);\n        \n        for (int i = 1; i < rowNum; i++) {\n            row[i] = triangle[rowNum - 1][i - 1] + triangle[rowNum - 1][i];\n        }\n        \n        triangle.push_back(row);\n    }\n    \n    return triangle;\n}\n\nvector<int> getPascalRow(int rowIndex) {\n    vector<int> row(rowIndex + 1, 1);\n    \n    for (int i = 1; i < rowIndex; i++) {\n        row[i] = (long)row[i - 1] * (rowIndex - i + 1) / i;\n    }\n    \n    return row;\n}"
+  },
+  "metadata": {
+    "difficulty": "Beginner",
+    "last_updated": "2024-01-15",
+    "tags": ["combinatorics", "mathematics", "dynamic-programming", "patterns"]
+  }
+}

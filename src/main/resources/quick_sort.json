@@ -19,8 +19,9 @@
     {
       "id": "process",
       "label": "General Step-by-Step Process",
-      "content": "```mermaid\nflowchart TD\n    A[Start Quick Sort] --> B{base case: array size <= 1?}\n    B -->|Yes| Z[Return sorted array]\n    B -->|No| C[Choose Pivot Element]\n    C --> D[Partition array around pivot]\n    D --> E[Recursively sort left partition]\n    E --> F[Recursively sort right partition]\n    F --> G[Combine: left + pivot + right]\n    G --> Z\n\n    subgraph Partition Process\n        H[Initialize pointers i, j]\n        H --> I{Compare elements}\n        I -->|element <= pivot| J[Swap and move pointer]\n        I -->|element > pivot| K[Move pointer]\n        J --> I\n        K --> I\n        I -->|Partition complete| L[Place pivot in final position]\n    end\n```\n\n**Process Breakdown:**\n1. **Base Case:** If array has 0 or 1 elements, it's already sorted\n2. **Choose Pivot:** Select an element as the pivot\n3. **Partition:** Rearrange array so all elements < pivot come before, all elements > pivot come after\n4. **Recurse:** Apply quick sort to left and right partitions\n5. **Combine:** The array is now sorted (left partition + pivot + right partition)"
-    },
+      "content": "```mermaid\nflowchart TD\n    A[\"Start Quick Sort\"] --> B[\"Choose a pivot element\"]\n    B --> C[\"Partition array into two parts\"]\n    C --> D[\"Left: elements < pivot\"]\n    C --> E[\"Right: elements > pivot\"]\n    D --> F{\"Is left part size > 1?\"}\n    E --> G{\"Is right part size > 1?\"}\n    F -->|Yes| H[\"Recursively apply Quick Sort on left part\"]\n    F -->|No| I[\"Left part is sorted\"]\n    G -->|Yes| J[\"Recursively apply Quick Sort on right part\"]\n    G -->|No| K[\"Right part is sorted\"]\n    H --> L[\"Combine sorted parts and pivot\"]\n    J --> L\n    I --> L\n    K --> L\n    L --> M[\"Array is sorted\"]\n    M --> N[\"End\"]\n```"
+
+      },
     {
       "id": "example",
       "label": "Example Sorting",

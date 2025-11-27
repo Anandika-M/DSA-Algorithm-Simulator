@@ -1,0 +1,45 @@
+{
+  "algorithm": {
+    "id": "breadth_first_search",
+    "name": "Breadth-First Search",
+    "category": "Graph Algorithms",
+    "description": "A graph traversal algorithm that explores all neighbors at the present depth level before moving on to nodes at the next depth level. Uses a queue data structure."
+  },
+  "sections": [
+    {
+      "id": "analogy",
+      "label": "Analogy",
+      "content": "Imagine you're searching for a specific book in a library. Instead of going deep into one section first, you start from the entrance and systematically search each shelf on the current floor before moving to the next floor. You check all books on the first shelf, then the second shelf, and so on, making sure you cover everything at your current level before going deeper. This ensures you find the closest book to the entrance first."
+    },
+    {
+      "id": "concept",
+      "label": "Concept",
+      "content": "Breadth-First Search is a graph traversal algorithm that systematically explores the vertices of a graph level by level. It starts at a root node and visits all neighbors at the current depth before moving to nodes at the next depth level.\n\n**Key Idea:** Explore all nodes at the current depth before moving deeper. This guarantees that the shortest path (in terms of number of edges) is found in unweighted graphs."
+    },
+    {
+      "id": "process",
+      "label": "General Step-by-Step Process",
+      "content":  "```mermaid\ngraph TD\n    A[Start BFS with Source Node S] --> B(\"Queue Q = [S]\")\n    B --> C[Mark S as Visited]\n    C --> D{Loop: While Q is not empty}\n    D -- True --> E[Dequeue Node U from Q]\n    E --> F[For each unvisited neighbor V of U]\n    F --> G[Mark V as Visited]\n    G --> H[Set Parent of V to U]\n    H --> I[Enqueue V to Q]\n    I --> F\n    F --> J[End For Loop]\n    J --> D\n    D -- False --> K[End BFS]\n```"    },
+    {
+      "id": "example",
+      "label": "Example Traversal",
+      "content": "**Graph:**\n```\n    A\n   / \\\n  B   C\n /   / \\\nD   E   F\n```\n\n**BFS Traversal starting from A:**\n1. **Level 0:** Visit A\n2. **Level 1:** Visit B, C (neighbors of A)\n3. **Level 2:** Visit D (neighbor of B), E, F (neighbors of C)\n\n**Final Traversal Order:** A → B → C → D → E → F\n\n**Queue States:**\n- Start: [A]\n- Process A: [B, C]\n- Process B: [C, D]\n- Process C: [D, E, F]\n- Process D: [E, F]\n- Process E: [F]\n- Process F: []"
+    },
+    {
+      "id": "properties",
+      "label": "Algorithm Properties",
+      "content": "### Time Complexity:\n- **O(V + E)** - where V is vertices, E is edges\n- **O(b^d)** - in tree search, where b is branching factor, d is depth\n\n### Space Complexity:\n- **O(V)** - for storing visited nodes and queue\n- **O(b^d)** - in tree search (space intensive for large branching factors)\n\n### Completeness:\n- **Yes** - guaranteed to find solution if it exists\n\n### Optimality:\n- **Yes** for unweighted graphs - finds shortest path\n- **No** for weighted graphs\n\n### When to Use BFS:\n\n**✅ Suitable for:**\n- Finding shortest path in unweighted graphs\n- Web crawling\n- Social network analysis (degrees of separation)\n- GPS navigation systems\n- Finding connected components\n- Level-order tree traversal\n\n**❌ Not suitable for:**\n- Very deep graphs with large branching factors\n- Memory-constrained environments\n- When any path suffices (not necessarily shortest)\n\n### Common Applications:\n1. **Shortest Path Finding** in unweighted graphs\n2. **Web Crawling** - systematically exploring websites\n3. **Social Networks** - finding degrees of separation\n4. **Network Broadcasting** - finding minimum time to reach all nodes\n5. **Connected Components** - in undirected graphs\n6. **Cycle Detection** - in undirected graphs\n\n### Implementation Tips:\n1. **Use a queue** (FIFO) data structure\n2. **Maintain a visited set** to avoid cycles\n3. **Track parent nodes** for path reconstruction\n4. **Consider memory usage** for large graphs\n5. **Use level tracking** for applications needing depth information"
+    }
+  ],
+  "code_examples": {
+    "python": "from collections import deque\n\ndef bfs(graph, start):\n    visited = set()\n    queue = deque([start])\n    visited.add(start)\n    result = []\n    \n    while queue:\n        node = queue.popleft()\n        result.append(node)\n        \n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    \n    return result\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D'],\n    'C': ['A', 'E', 'F'],\n    'D': ['B'],\n    'E': ['C'],\n    'F': ['C']\n}\n\nprint(bfs(graph, 'A'))  # ['A', 'B', 'C', 'D', 'E', 'F']",
+    "javascript": "function bfs(graph, start) {\n    const visited = new Set();\n    const queue = [start];\n    visited.add(start);\n    const result = [];\n    \n    while (queue.length > 0) {\n        const node = queue.shift();\n        result.push(node);\n        \n        for (const neighbor of graph[node]) {\n            if (!visited.has(neighbor)) {\n                visited.add(neighbor);\n                queue.push(neighbor);\n            }\n        }\n    }\n    \n    return result;\n}\n\n// Example usage\nconst graph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D'],\n    'C': ['A', 'E', 'F'],\n    'D': ['B'],\n    'E': ['C'],\n    'F': ['C']\n};\n\nconsole.log(bfs(graph, 'A'));  // ['A', 'B', 'C', 'D', 'E', 'F']",
+    "java": "import java.util.*;\n\npublic class BFS {\n    public static List<String> bfs(Map<String, List<String>> graph, String start) {\n        Set<String> visited = new HashSet<>();\n        Queue<String> queue = new LinkedList<>();\n        List<String> result = new ArrayList<>();\n        \n        queue.offer(start);\n        visited.add(start);\n        \n        while (!queue.isEmpty()) {\n            String node = queue.poll();\n            result.add(node);\n            \n            for (String neighbor : graph.get(node)) {\n                if (!visited.contains(neighbor)) {\n                    visited.add(neighbor);\n                    queue.offer(neighbor);\n                }\n            }\n        }\n        \n        return result;\n    }\n}",
+    "cpp": "#include <iostream>\n#include <queue>\n#include <unordered_map>\n#include <unordered_set>\n#include <vector>\n\nusing namespace std;\n\nvector<string> bfs(unordered_map<string, vector<string>>& graph, string start) {\n    unordered_set<string> visited;\n    queue<string> q;\n    vector<string> result;\n    \n    q.push(start);\n    visited.insert(start);\n    \n    while (!q.empty()) {\n        string node = q.front();\n        q.pop();\n        result.push_back(node);\n        \n        for (string neighbor : graph[node]) {\n            if (visited.find(neighbor) == visited.end()) {\n                visited.insert(neighbor);\n                q.push(neighbor);\n            }\n        }\n    }\n    \n    return result;\n}"
+  },
+  "metadata": {
+    "difficulty": "Beginner",
+    "last_updated": "2024-01-15",
+    "tags": ["graph", "traversal", "queue", "shortest-path", "unweighted"]
+  }
+}
