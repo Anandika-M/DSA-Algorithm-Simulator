@@ -1,1 +1,65 @@
-
+{
+  "topic": "Binary Search",
+  "quiz": [
+    {
+      "question": "What is the main idea behind Binary Search?",
+      "options": [
+        "Check every element sequentially until the target is found",
+        "Divide the search interval in half repeatedly to find the target",
+        "Sort the array before searching",
+        "Use a hash table to find the target in constant time"
+      ],
+      "answer": "Divide the search interval in half repeatedly to find the target"
+    },
+    {
+      "question": "What is the time complexity of Binary Search?",
+      "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+      "answer": "O(log n)"
+    },
+    {
+      "question": "Which of the following is required for Binary Search to work?",
+      "options": [
+        "The array must be sorted",
+        "The array must be unsorted",
+        "The array must contain only positive numbers",
+        "The array must have unique elements"
+      ],
+      "answer": "The array must be sorted"
+    },
+    {
+      "question": "Is Binary Search an in-place algorithm?",
+      "options": ["Yes", "No"],
+      "answer": "Yes"
+    },
+    {
+      "question": "Which condition indicates the search should stop?",
+      "options": [
+        "Low > High or target found",
+        "Low < High always",
+        "Mid == 0",
+        "Array length is even"
+      ],
+      "answer": "Low > High or target found"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Binary Search: Ice Cream Parlor",
+      "link": "https://www.hackerrank.com/challenges/icecream-parlor",
+      "difficulty": "Easy",
+      "description": "Use binary search to find two ice cream flavors that add up to a given total cost."
+    },
+    {
+      "title": "Closest Numbers",
+      "link": "https://www.hackerrank.com/challenges/closest-numbers",
+      "difficulty": "Medium",
+      "description": "Apply binary search logic to efficiently find pairs of numbers with the smallest absolute difference."
+    },
+    {
+      "title": "Maximum Subarray Sum (Modulo)",
+      "link": "https://www.hackerrank.com/challenges/maximum-subarray-sum",
+      "difficulty": "Hard",
+      "description": "Use advanced binary search techniques and prefix sums to find the maximum subarray sum modulo m."
+    }
+  ]
+}

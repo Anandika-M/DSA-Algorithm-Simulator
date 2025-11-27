@@ -1,0 +1,55 @@
+{
+  "topic": "Coin Change",
+  "quiz": [
+    {
+      "question": "What is the main idea behind the Coin Change problem?",
+      "options": [
+        "Find the minimum coins to reach a total",
+        "Find the maximum number of coins",
+        "Sort coins and take the largest first",
+        "Use a greedy approach for all amounts"
+      ],
+      "answer": "Find the minimum coins to reach a total"
+    },
+    {
+      "question": "Coin Change problem can be solved efficiently using:",
+      "options": ["Greedy", "Dynamic Programming", "DFS only", "Sorting"],
+      "answer": "Dynamic Programming"
+    },
+    {
+      "question": "Time complexity of the DP solution for Coin Change (with amount n and m coins) is:",
+      "options": ["O(n)", "O(m*n)", "O(n²)", "O(m²)"],
+      "answer": "O(m*n)"
+    },
+    {
+      "question": "Is greedy always optimal for Coin Change?",
+      "options": ["Yes", "No"],
+      "answer": "No"
+    },
+    {
+      "question": "Coin Change is similar to which classical problem?",
+      "options": ["0/1 Knapsack", "Bubble Sort", "DFS traversal", "Binary Search"],
+      "answer": "0/1 Knapsack"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "The Coin Change Problem",
+      "link": "https://www.hackerrank.com/challenges/coin-change",
+      "difficulty": "Easy",
+      "description": "Compute the number of ways to make change for a given amount using DP."
+    },
+    {
+      "title": "The Coin Change Problem II",
+      "link": "https://www.hackerrank.com/challenges/coin-change-2",
+      "difficulty": "Medium",
+      "description": "Determine the minimum number of coins required to form a total amount."
+    },
+    {
+      "title": "Maximum Subarray Sum",
+      "link": "https://www.hackerrank.com/challenges/maximum-subarray-sum",
+      "difficulty": "Hard",
+      "description": "Apply DP techniques similar to Coin Change for modular subarray sums."
+    }
+  ]
+}

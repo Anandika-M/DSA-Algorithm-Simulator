@@ -1,0 +1,55 @@
+{
+  "topic": "Longest Common Subsequence (LCS)",
+  "quiz": [
+    {
+      "question": "What does the Longest Common Subsequence (LCS) problem ask?",
+      "options": [
+        "Find the longest string present in both sequences",
+        "Find the longest sequence that appears in the same relative order in both strings",
+        "Find the longest contiguous substring in both strings",
+        "Find the sum of all common characters"
+      ],
+      "answer": "Find the longest sequence that appears in the same relative order in both strings"
+    },
+    {
+      "question": "Time complexity of DP solution for LCS with strings of length m and n is:",
+      "options": ["O(m+n)", "O(m*n)", "O(m²*n²)", "O(log m + log n)"],
+      "answer": "O(m*n)"
+    },
+    {
+      "question": "Is LCS problem solvable recursively without DP?",
+      "options": ["Yes, but inefficient", "No", "Only for strings of length < 5", "Only with greedy"],
+      "answer": "Yes, but inefficient"
+    },
+    {
+      "question": "Space optimization can reduce LCS DP table to:",
+      "options": ["O(1)", "O(min(m,n))", "O(m+n)", "O(m*n) always"],
+      "answer": "O(min(m,n))"
+    },
+    {
+      "question": "LCS is an example of which algorithmic paradigm?",
+      "options": ["Greedy", "Dynamic Programming", "Divide and Conquer", "DFS/BFS"],
+      "answer": "Dynamic Programming"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "The Longest Common Subsequence",
+      "link": "https://www.hackerrank.com/challenges/common-child",
+      "difficulty": "Easy",
+      "description": "Find the length of the longest subsequence common to two given strings."
+    },
+    {
+      "title": "Abbreviation",
+      "link": "https://www.hackerrank.com/challenges/abbr",
+      "difficulty": "Medium",
+      "description": "Use LCS-like DP to determine if one string can be transformed into another using uppercase conversions."
+    },
+    {
+      "title": "Longest Palindromic Subsequence",
+      "link": "https://www.hackerrank.com/challenges/longest-palindromic-subsequence",
+      "difficulty": "Hard",
+      "description": "Use DP and LCS logic to find the longest palindromic subsequence in a string."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "topic": "Breadth-First Search (BFS)",
+  "quiz": [
+    {
+      "question": "What is the main idea behind BFS?",
+      "options": [
+        "Explore nodes level by level using a queue",
+        "Explore nodes deeply first using recursion",
+        "Use a stack to traverse nodes",
+        "Sort nodes before visiting"
+      ],
+      "answer": "Explore nodes level by level using a queue"
+    },
+    {
+      "question": "Which data structure is primarily used in BFS?",
+      "options": ["Stack", "Queue", "Priority Queue", "HashMap"],
+      "answer": "Queue"
+    },
+    {
+      "question": "BFS is useful to find:",
+      "options": [
+        "Shortest path in unweighted graphs",
+        "Topological order of a DAG",
+        "Maximum spanning tree",
+        "Longest path in a tree"
+      ],
+      "answer": "Shortest path in unweighted graphs"
+    },
+    {
+      "question": "Time complexity of BFS using adjacency list is:",
+      "options": ["O(V + E)", "O(V²)", "O(E²)", "O(log V)"],
+      "answer": "O(V + E)"
+    },
+    {
+      "question": "Is BFS guaranteed to visit all nodes in a connected graph?",
+      "options": ["Yes", "No"],
+      "answer": "Yes"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Breadth First Search: Shortest Reach",
+      "link": "https://www.hackerrank.com/challenges/bfsshortreach",
+      "difficulty": "Easy",
+      "description": "Compute shortest distances from a given node to all other nodes in an unweighted graph using BFS."
+    },
+    {
+      "title": "Connected Cell in a Grid",
+      "link": "https://www.hackerrank.com/challenges/connected-cell-in-a-grid",
+      "difficulty": "Medium",
+      "description": "Use BFS to traverse 2D grids to find the largest connected region."
+    },
+    {
+      "title": "Knightl on a Chessboard",
+      "link": "https://www.hackerrank.com/challenges/knightl-on-chessboard",
+      "difficulty": "Hard",
+      "description": "Apply BFS to compute minimum moves for a knight piece on a chessboard with variable movements."
+    }
+  ]
+}

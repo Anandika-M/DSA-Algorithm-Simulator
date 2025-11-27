@@ -1,0 +1,55 @@
+{
+  "topic": "Dijkstra's Algorithm",
+  "quiz": [
+    {
+      "question": "What is the main idea of Dijkstra's algorithm?",
+      "options": [
+        "Find the shortest path from a source node to all other nodes in a weighted graph",
+        "Find the minimum spanning tree",
+        "Find the longest path in a graph",
+        "Sort edges by weight"
+      ],
+      "answer": "Find the shortest path from a source node to all other nodes in a weighted graph"
+    },
+    {
+      "question": "Which data structure is commonly used to select the next closest node in Dijkstra?",
+      "options": ["Queue", "Stack", "Priority Queue / Min-Heap", "HashMap"],
+      "answer": "Priority Queue / Min-Heap"
+    },
+    {
+      "question": "Time complexity of Dijkstra using a Min-Heap and adjacency list is:",
+      "options": ["O(V²)", "O(E log V)", "O(V + E)", "O(V*E)"],
+      "answer": "O(E log V)"
+    },
+    {
+      "question": "Can Dijkstra handle negative edge weights?",
+      "options": ["Yes", "No"],
+      "answer": "No"
+    },
+    {
+      "question": "Dijkstra algorithm is an example of which paradigm?",
+      "options": ["Greedy", "Dynamic Programming", "Divide and Conquer", "Backtracking"],
+      "answer": "Greedy"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Shortest Reach 2",
+      "link": "https://www.hackerrank.com/challenges/shortest-reach-2",
+      "difficulty": "Easy",
+      "description": "Compute shortest distances from a given source node to all other nodes using Dijkstra’s algorithm."
+    },
+    {
+      "title": "Dijkstra: Shortest Reach",
+      "link": "https://www.hackerrank.com/challenges/dijkstrashortreach",
+      "difficulty": "Medium",
+      "description": "Apply Dijkstra’s algorithm for multiple queries and larger graphs."
+    },
+    {
+      "title": "Roads and Libraries",
+      "link": "https://www.hackerrank.com/challenges/torque-and-development",
+      "difficulty": "Hard",
+      "description": "Combine Dijkstra with graph optimization to minimize cost of building libraries and roads."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "topic": "Merge Sort",
+  "quiz": [
+    {
+      "question": "What is the main idea behind Merge Sort?",
+      "options": [
+        "Divide the array into halves, sort each half, and merge them",
+        "Swap adjacent elements until the array is sorted",
+        "Select the smallest element and move it to the front",
+        "Insert each element into its correct position"
+      ],
+      "answer": "Divide the array into halves, sort each half, and merge them"
+    },
+    {
+      "question": "Merge Sort is based on which algorithmic paradigm?",
+      "options": ["Greedy", "Divide and Conquer", "Dynamic Programming", "Backtracking"],
+      "answer": "Divide and Conquer"
+    },
+    {
+      "question": "What is the time complexity of Merge Sort in the worst case?",
+      "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"],
+      "answer": "O(n log n)"
+    },
+    {
+      "question": "Is Merge Sort stable?",
+      "options": ["Yes", "No"],
+      "answer": "Yes"
+    },
+    {
+      "question": "What is the auxiliary space complexity of Merge Sort?",
+      "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "answer": "O(n)"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Merge Sort: Counting Inversions",
+      "link": "https://www.hackerrank.com/challenges/ctci-merge-sort",
+      "difficulty": "Easy",
+      "description": "Implement merge sort and count how many inversions (out-of-order pairs) are needed to sort the array."
+    },
+    {
+      "title": "Inversion Count",
+      "link": "https://www.hackerrank.com/challenges/insertion-sort/problem",
+      "difficulty": "Medium",
+      "description": "Use a modified merge sort to count the number of inversions efficiently in large arrays."
+    },
+    {
+      "title": "Fraudulent Activity Notifications",
+      "link": "https://www.hackerrank.com/challenges/fraudulent-activity-notifications",
+      "difficulty": "Hard",
+      "description": "Apply merge-based sliding window median logic to detect fraudulent transactions efficiently."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "topic": "Job Scheduling",
+  "quiz": [
+    {
+      "question": "What is the main objective of the Job Scheduling problem?",
+      "options": [
+        "Schedule jobs to maximize profit given deadlines",
+        "Minimize the number of jobs",
+        "Sort jobs by ID",
+        "Find shortest path among jobs"
+      ],
+      "answer": "Schedule jobs to maximize profit given deadlines"
+    },
+    {
+      "question": "Which algorithmic paradigm is commonly used for the classical Job Scheduling problem?",
+      "options": ["Greedy", "Dynamic Programming", "DFS", "Divide and Conquer"],
+      "answer": "Greedy"
+    },
+    {
+      "question": "Jobs are typically scheduled in order of:",
+      "options": [
+        "Descending profit",
+        "Ascending deadline",
+        "Job ID",
+        "Random"
+      ],
+      "answer": "Descending profit"
+    },
+    {
+      "question": "Time complexity of the greedy Job Scheduling algorithm is:",
+      "options": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+      "answer": "O(n log n)"
+    },
+    {
+      "question": "Can the Job Scheduling problem have multiple optimal schedules with the same maximum profit?",
+      "options": ["Yes", "No"],
+      "answer": "Yes"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Job Sequencing Problem",
+      "link": "https://www.hackerrank.com/challenges/job-sequencing",
+      "difficulty": "Easy",
+      "description": "Schedule jobs with deadlines and profits to maximize total profit using greedy approach."
+    },
+    {
+      "title": "Maximum Profit Scheduling",
+      "link": "https://www.hackerrank.com/challenges/maximum-profit-scheduling",
+      "difficulty": "Medium",
+      "description": "Solve weighted job scheduling to select non-overlapping jobs for maximum profit."
+    },
+    {
+      "title": "Weighted Job Scheduling",
+      "link": "https://www.hackerrank.com/challenges/weighted-job-scheduling",
+      "difficulty": "Hard",
+      "description": "Use DP to schedule jobs with start and end times and maximize total profit."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "topic": "Fibonacci",
+  "quiz": [
+    {
+      "question": "What is the Fibonacci sequence?",
+      "options": [
+        "Each number is the sum of the two preceding ones",
+        "Each number is the product of the two preceding ones",
+        "Each number is double the previous number",
+        "Random sequence"
+      ],
+      "answer": "Each number is the sum of the two preceding ones"
+    },
+    {
+      "question": "Time complexity of naive recursive Fibonacci implementation is:",
+      "options": ["O(n)", "O(n log n)", "O(2^n)", "O(n²)"],
+      "answer": "O(2^n)"
+    },
+    {
+      "question": "Time complexity of Fibonacci using dynamic programming is:",
+      "options": ["O(n)", "O(log n)", "O(n²)", "O(2^n)"],
+      "answer": "O(n)"
+    },
+    {
+      "question": "Which technique can compute Fibonacci in O(log n) time?",
+      "options": ["Recursion", "Matrix exponentiation", "Linear iteration", "Greedy approach"],
+      "answer": "Matrix exponentiation"
+    },
+    {
+      "question": "Fibonacci sequence is an example of:",
+      "options": ["Greedy algorithm", "Dynamic programming", "Divide and Conquer", "Sorting algorithm"],
+      "answer": "Dynamic programming"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Fibonacci Modified",
+      "link": "https://www.hackerrank.com/challenges/fibonacci-modified",
+      "difficulty": "Easy",
+      "description": "Compute a modified Fibonacci sequence for large numbers using DP or iteration."
+    },
+    {
+      "title": "Recursive Digit Sum",
+      "link": "https://www.hackerrank.com/challenges/recursive-digit-sum",
+      "difficulty": "Medium",
+      "description": "Use recursion and memoization techniques related to Fibonacci for efficient computation."
+    },
+    {
+      "title": "Red John is Back",
+      "link": "https://www.hackerrank.com/challenges/red-john-is-back",
+      "difficulty": "Hard",
+      "description": "Solve complex combinatorial counting using Fibonacci-like DP sequences."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "topic": "Selection Sort",
+  "quiz": [
+    {
+      "question": "What’s the basic idea behind Selection Sort?",
+      "options": [
+        "Swap adjacent elements until sorted",
+        "Select the smallest (or largest) element and put it in correct position",
+        "Use a pivot to partition the array",
+        "Merge two sorted halves"
+      ],
+      "answer": "Select the smallest (or largest) element and put it in correct position"
+    },
+    {
+      "question": "What is the time complexity of Selection Sort in the worst case?",
+      "options": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+      "answer": "O(n²)"
+    },
+    {
+      "question": "Is Selection Sort stable?",
+      "options": [
+        "Always stable",
+        "Never stable",
+        "Stable only for certain inputs",
+        "Stable only if implemented carefully"
+      ],
+      "answer": "Never stable"
+    },
+    {
+      "question": "How many swaps occur in Selection Sort (best or worst case)?",
+      "options": ["n²", "n log n", "n", "Depends on input"],
+      "answer": "n"
+    },
+    {
+      "question": "Which of these is a disadvantage of Selection Sort?",
+      "options": [
+        "Requires extra memory",
+        "Poor performance on large datasets",
+        "Doesn’t work on negative numbers",
+        "Works only on integers"
+      ],
+      "answer": "Poor performance on large datasets"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Correctness and the Loop Invariant",
+      "link": "https://www.hackerrank.com/challenges/correctness-invariant",
+      "difficulty": "Easy",
+      "description": "Implement Selection Sort and use a loop invariant to ensure correctness by printing the array after sorting."
+    },
+    {
+      "title": "Running Time of Algorithms",
+      "link": "https://www.hackerrank.com/challenges/runningtime",
+      "difficulty": "Medium",
+      "description": "Determine the number of shifts or swaps performed by your sorting algorithm to evaluate its running time."
+    },
+    {
+      "title": "Quicksort In-Place",
+      "link": "https://www.hackerrank.com/challenges/quicksort-in-place",
+      "difficulty": "Hard",
+      "description": "Implement in-place sorting and compare its efficiency with Selection Sort to understand space optimization trade-offs."
+    }
+  ]
+}

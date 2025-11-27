@@ -1,0 +1,55 @@
+{
+  "topic": "Topological Sort",
+  "quiz": [
+    {
+      "question": "What is the main idea behind Topological Sort?",
+      "options": [
+        "Sort nodes of a DAG in linear order such that for every directed edge u → v, u comes before v",
+        "Find shortest path in a weighted graph",
+        "Sort nodes by degree",
+        "Construct a minimum spanning tree"
+      ],
+      "answer": "Sort nodes of a DAG in linear order such that for every directed edge u → v, u comes before v"
+    },
+    {
+      "question": "Which type of graph can be topologically sorted?",
+      "options": ["Any graph", "Directed Acyclic Graph (DAG)", "Undirected graph", "Graph with cycles"],
+      "answer": "Directed Acyclic Graph (DAG)"
+    },
+    {
+      "question": "Which algorithms can be used for Topological Sort?",
+      "options": ["DFS-based", "Kahn's Algorithm (BFS-based)", "Both", "None"],
+      "answer": "Both"
+    },
+    {
+      "question": "Time complexity of Topological Sort using adjacency list is:",
+      "options": ["O(V + E)", "O(V²)", "O(E²)", "O(log V)"],
+      "answer": "O(V + E)"
+    },
+    {
+      "question": "Topological Sort is unique for a given DAG. True or False?",
+      "options": ["True", "False"],
+      "answer": "False"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Topological Sorting",
+      "link": "https://www.hackerrank.com/challenges/topological-sorting",
+      "difficulty": "Easy",
+      "description": "Perform a topological sort on a given DAG and return one valid ordering."
+    },
+    {
+      "title": "Bachelors in Paradise",
+      "link": "https://www.hackerrank.com/challenges/bachelors-in-paradise",
+      "difficulty": "Medium",
+      "description": "Use topological sorting to determine feasible order of events given dependencies."
+    },
+    {
+      "title": "Course Schedule",
+      "link": "https://www.hackerrank.com/challenges/course-schedule",
+      "difficulty": "Hard",
+      "description": "Check if all courses can be completed using topological sort on prerequisite constraints."
+    }
+  ]
+}

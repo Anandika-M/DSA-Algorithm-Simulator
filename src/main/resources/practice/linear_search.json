@@ -1,0 +1,65 @@
+{
+  "topic": "Linear Search",
+  "quiz": [
+    {
+      "question": "What is the basic idea behind Linear Search?",
+      "options": [
+        "Divide the array in half and search recursively",
+        "Compare each element of the array sequentially with the target",
+        "Use a pivot to partition the array for searching",
+        "Use hashing to find the element in constant time"
+      ],
+      "answer": "Compare each element of the array sequentially with the target"
+    },
+    {
+      "question": "What is the time complexity of Linear Search in the worst case?",
+      "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "answer": "O(n)"
+    },
+    {
+      "question": "Is Linear Search efficient for large, sorted datasets?",
+      "options": ["Yes", "No"],
+      "answer": "No"
+    },
+    {
+      "question": "What happens if the element is not found in the array?",
+      "options": [
+        "The algorithm returns the index of the first element",
+        "The algorithm returns -1 or an indication of not found",
+        "The algorithm continues infinitely",
+        "The algorithm throws an error"
+      ],
+      "answer": "The algorithm returns -1 or an indication of not found"
+    },
+    {
+      "question": "Which data structure is Linear Search applicable to?",
+      "options": [
+        "Only sorted arrays",
+        "Only linked lists",
+        "Any list or collection that can be traversed sequentially",
+        "Only hash maps"
+      ],
+      "answer": "Any list or collection that can be traversed sequentially"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Solve Me First",
+      "link": "https://www.hackerrank.com/challenges/solve-me-first",
+      "difficulty": "Easy",
+      "description": "Start with a simple sequential logic problem to get familiar with reading input and performing basic operations — a first step before implementing linear search."
+    },
+    {
+      "title": "Simple Array Search",
+      "link": "https://www.hackerrank.com/challenges/simple-array-search",
+      "difficulty": "Medium",
+      "description": "Implement Linear Search to find the index of a target integer within an array of integers."
+    },
+    {
+      "title": "Missing Numbers",
+      "link": "https://www.hackerrank.com/challenges/missing-numbers",
+      "difficulty": "Hard",
+      "description": "Use linear scanning and frequency counting logic to find missing elements between two lists efficiently."
+    }
+  ]
+}

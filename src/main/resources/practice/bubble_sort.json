@@ -1,0 +1,60 @@
+{
+  "topic": "Bubble Sort",
+  "quiz": [
+    {
+      "question": "What is the main idea behind Bubble Sort?",
+      "options": [
+        "Divide the array into halves recursively",
+        "Repeatedly swap adjacent elements if they are in the wrong order",
+        "Insert each element into its correct position",
+        "Select the smallest element and move it to the front"
+      ],
+      "answer": "Repeatedly swap adjacent elements if they are in the wrong order"
+    },
+    {
+      "question": "What is the time complexity of Bubble Sort in the best case?",
+      "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"],
+      "answer": "O(n)"
+    },
+    {
+      "question": "Bubble Sort is stable. True or False?",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Which optimization can improve Bubble Sort’s performance?",
+      "options": [
+        "Binary search for comparisons",
+        "Stop early if no swaps occur in a pass",
+        "Use a recursive approach",
+        "Swap every alternate element"
+      ],
+      "answer": "Stop early if no swaps occur in a pass"
+    },
+    {
+      "question": "In Bubble Sort, how many passes are required to sort an array of n elements in the worst case?",
+      "options": ["n - 1", "n", "n²", "n log n"],
+      "answer": "n - 1"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Sorting: Bubble Sort",
+      "link": "https://www.hackerrank.com/challenges/ctci-bubble-sort",
+      "difficulty": "Easy",
+      "description": "Implement Bubble Sort and count the total number of swaps required to sort the array."
+    },
+    {
+      "title": "Counting Sort 1",
+      "link": "https://www.hackerrank.com/challenges/countingsort1",
+      "difficulty": "Medium",
+      "description": "Use counting to optimize sorting for integers, comparing performance with Bubble Sort."
+    },
+    {
+      "title": "Big Sorting",
+      "link": "https://www.hackerrank.com/challenges/big-sorting",
+      "difficulty": "Hard",
+      "description": "Sort a large list of very big numbers efficiently. Analyze why Bubble Sort would be impractical here."
+    }
+  ]
+}

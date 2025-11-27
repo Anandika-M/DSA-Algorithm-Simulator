@@ -1,0 +1,55 @@
+{
+  "topic": "0/1 Knapsack",
+  "quiz": [
+    {
+      "question": "What is the main idea behind 0/1 Knapsack?",
+      "options": [
+        "Take fractional parts of items to maximize value",
+        "Select items completely or not at all to maximize value within capacity",
+        "Sort items and take the first n items",
+        "Use a greedy approach for all items"
+      ],
+      "answer": "Select items completely or not at all to maximize value within capacity"
+    },
+    {
+      "question": "Which algorithmic paradigm is commonly used for 0/1 Knapsack?",
+      "options": ["Greedy", "Divide and Conquer", "Dynamic Programming", "Backtracking"],
+      "answer": "Dynamic Programming"
+    },
+    {
+      "question": "Time complexity of the DP solution for 0/1 Knapsack is:",
+      "options": ["O(n)", "O(n*W)", "O(n²)", "O(log n)"],
+      "answer": "O(n*W)"
+    },
+    {
+      "question": "Can the greedy approach solve 0/1 Knapsack optimally?",
+      "options": ["Yes", "No"],
+      "answer": "No"
+    },
+    {
+      "question": "0/1 Knapsack problem is:",
+      "options": ["Polynomial-time solvable", "NP-Complete", "Always easy", "Linear-time solvable"],
+      "answer": "NP-Complete"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Knapsack",
+      "link": "https://www.hackerrank.com/challenges/knapsack",
+      "difficulty": "Easy",
+      "description": "Implement the DP solution for the 0/1 Knapsack problem for small inputs."
+    },
+    {
+      "title": "The Knapsack Problem",
+      "link": "https://www.hackerrank.com/challenges/the-knapsack-problem",
+      "difficulty": "Medium",
+      "description": "Solve larger instances of 0/1 Knapsack using optimized DP techniques."
+    },
+    {
+      "title": "Pairs of Shoes",
+      "link": "https://www.hackerrank.com/challenges/pairs-of-shoes",
+      "difficulty": "Hard",
+      "description": "Use DP logic similar to 0/1 Knapsack to solve combinatorial optimization problems."
+    }
+  ]
+}

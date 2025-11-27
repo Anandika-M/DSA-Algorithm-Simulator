@@ -1,0 +1,60 @@
+{
+  "topic": "Quick Sort",
+  "quiz": [
+    {
+      "question": "What is the basic idea behind Quick Sort?",
+      "options": [
+        "Divide the array into halves and merge them later",
+        "Select a pivot and partition the array around it",
+        "Compare adjacent elements and swap if needed",
+        "Insert each element into its correct position"
+      ],
+      "answer": "Select a pivot and partition the array around it"
+    },
+    {
+      "question": "Quick Sort follows which algorithmic paradigm?",
+      "options": ["Dynamic Programming", "Greedy", "Divide and Conquer", "Backtracking"],
+      "answer": "Divide and Conquer"
+    },
+    {
+      "question": "What is the average time complexity of Quick Sort?",
+      "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"],
+      "answer": "O(n log n)"
+    },
+    {
+      "question": "When does Quick Sort perform worst?",
+      "options": [
+        "When the array is already sorted and pivot is the first or last element",
+        "When all elements are equal",
+        "When array elements are distinct",
+        "When pivot is the median element"
+      ],
+      "answer": "When the array is already sorted and pivot is the first or last element"
+    },
+    {
+      "question": "Is Quick Sort an in-place sorting algorithm?",
+      "options": ["Yes", "No"],
+      "answer": "Yes"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Quicksort 1 - Partition",
+      "link": "https://www.hackerrank.com/challenges/quicksort1",
+      "difficulty": "Easy",
+      "description": "Implement the partition step of Quick Sort to divide an array into elements less than and greater than the pivot."
+    },
+    {
+      "title": "Quicksort 2 - Sorting",
+      "link": "https://www.hackerrank.com/challenges/quicksort2",
+      "difficulty": "Medium",
+      "description": "Complete the recursive implementation of Quick Sort and print the array at each partitioning step."
+    },
+    {
+      "title": "Running Time of Quicksort",
+      "link": "https://www.hackerrank.com/challenges/quicksort3",
+      "difficulty": "Hard",
+      "description": "Analyze and compare the running time of Quick Sort and Insertion Sort on the same dataset."
+    }
+  ]
+}

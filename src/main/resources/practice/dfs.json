@@ -1,0 +1,60 @@
+{
+  "topic": "Depth-First Search (DFS)",
+  "quiz": [
+    {
+      "question": "What is the main idea behind DFS?",
+      "options": [
+        "Explore nodes level by level",
+        "Explore nodes deeply first using a stack or recursion",
+        "Sort nodes before visiting",
+        "Use a queue to traverse nodes"
+      ],
+      "answer": "Explore nodes deeply first using a stack or recursion"
+    },
+    {
+      "question": "Which data structure is primarily used in DFS (non-recursive)?",
+      "options": ["Queue", "Stack", "Priority Queue", "HashMap"],
+      "answer": "Stack"
+    },
+    {
+      "question": "DFS is useful for:",
+      "options": [
+        "Topological sorting",
+        "Finding shortest path in unweighted graph",
+        "Breadth traversal",
+        "Level-order printing"
+      ],
+      "answer": "Topological sorting"
+    },
+    {
+      "question": "Time complexity of DFS using adjacency list is:",
+      "options": ["O(V + E)", "O(V²)", "O(E²)", "O(log V)"],
+      "answer": "O(V + E)"
+    },
+    {
+      "question": "DFS can be implemented using recursion. True or False?",
+      "options": ["True", "False"],
+      "answer": "True"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Connected Cells in a Grid",
+      "link": "https://www.hackerrank.com/challenges/connected-cell-in-a-grid",
+      "difficulty": "Easy",
+      "description": "Use DFS to explore all connected cells in a 2D matrix."
+    },
+    {
+      "title": "Journey to the Moon",
+      "link": "https://www.hackerrank.com/challenges/journey-to-the-moon",
+      "difficulty": "Medium",
+      "description": "Use DFS to find connected components in a graph and count valid pairs of astronauts from different countries."
+    },
+    {
+      "title": "Even Tree",
+      "link": "https://www.hackerrank.com/challenges/even-tree",
+      "difficulty": "Hard",
+      "description": "Use DFS to determine edges that can be removed to split a tree into even-sized subtrees."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "topic": "Kruskal's Algorithm",
+  "quiz": [
+    {
+      "question": "What is Kruskal’s algorithm used for?",
+      "options": [
+        "Shortest path computation",
+        "Finding minimum spanning tree (MST)",
+        "Topological sorting",
+        "Finding cycles"
+      ],
+      "answer": "Finding minimum spanning tree (MST)"
+    },
+    {
+      "question": "Which data structure is primarily used in Kruskal for cycle detection?",
+      "options": ["Stack", "Queue", "Union-Find / Disjoint Set", "Priority Queue"],
+      "answer": "Union-Find / Disjoint Set"
+    },
+    {
+      "question": "Time complexity of Kruskal’s algorithm using sorting + Union-Find is:",
+      "options": ["O(E log E)", "O(V²)", "O(E²)", "O(V + E)"],
+      "answer": "O(E log E)"
+    },
+    {
+      "question": "Kruskal’s algorithm can handle disconnected graphs. True or False?",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "question": "Kruskal’s algorithm is an example of which paradigm?",
+      "options": ["Greedy", "Dynamic Programming", "Divide and Conquer", "Backtracking"],
+      "answer": "Greedy"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Kruskal: Minimum Spanning Tree",
+      "link": "https://www.hackerrank.com/challenges/kruskalmstrsub",
+      "difficulty": "Easy",
+      "description": "Find the weight of the MST for a weighted undirected graph using Kruskal's algorithm."
+    },
+    {
+      "title": "MST: Really Special Subtree",
+      "link": "https://www.hackerrank.com/challenges/primsmstsub",
+      "difficulty": "Medium",
+      "description": "Use Kruskal’s algorithm to compute MST on a larger weighted graph with multiple queries."
+    },
+    {
+      "title": "Roads and Libraries",
+      "link": "https://www.hackerrank.com/challenges/torque-and-development",
+      "difficulty": "Hard",
+      "description": "Optimize building roads and libraries using MST concepts and greedy selection of edges."
+    }
+  ]
+}

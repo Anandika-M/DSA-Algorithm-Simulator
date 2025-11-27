@@ -1,0 +1,60 @@
+{
+  "topic": "Pascal's Triangle",
+  "quiz": [
+    {
+      "question": "What does each number in Pascal's Triangle represent?",
+      "options": [
+        "The sum of two numbers directly above it",
+        "The product of two numbers above it",
+        "The difference between two numbers above it",
+        "Random numbers"
+      ],
+      "answer": "The sum of two numbers directly above it"
+    },
+    {
+      "question": "The nth row of Pascal's Triangle represents coefficients of which expansion?",
+      "options": [
+        "(a + b)^(n-1)",
+        "(a + b)^n",
+        "(a - b)^n",
+        "(a * b)^n"
+      ],
+      "answer": "(a + b)^n"
+    },
+    {
+      "question": "Time complexity to generate first n rows of Pascal's Triangle using DP is:",
+      "options": ["O(n²)", "O(n log n)", "O(n)", "O(n³)"],
+      "answer": "O(n²)"
+    },
+    {
+      "question": "Pascal's Triangle is closely related to which combinatorial concept?",
+      "options": ["Permutations", "Combinations", "Fibonacci Numbers", "Binary Search"],
+      "answer": "Combinations"
+    },
+    {
+      "question": "Can Pascal's Triangle be generated recursively?",
+      "options": ["Yes", "No"],
+      "answer": "Yes"
+    }
+  ],
+  "hackerrank_problems": [
+    {
+      "title": "Pascal’s Triangle",
+      "link": "https://www.hackerrank.com/challenges/pascals-triangle",
+      "difficulty": "Easy",
+      "description": "Generate the first n rows of Pascal's Triangle and print them."
+    },
+    {
+      "title": "Binomial Coefficients",
+      "link": "https://www.hackerrank.com/challenges/binomial-coefficients",
+      "difficulty": "Medium",
+      "description": "Compute C(n, k) efficiently using DP inspired by Pascal's Triangle."
+    },
+    {
+      "title": "Counting Triangles",
+      "link": "https://www.hackerrank.com/challenges/counting-triangles",
+      "difficulty": "Hard",
+      "description": "Use combinatorial reasoning and Pascal's Triangle properties to count valid triangles in a set."
+    }
+  ]
+}
