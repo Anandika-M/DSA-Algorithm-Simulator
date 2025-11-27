@@ -60,7 +60,7 @@ Update the connection string in all Java files:
 ```
 3. Import Data
 
-Ensure your MongoDB has the required collections present in the folder : 
+Ensure your MongoDB has the required collections present in the folder : src/main/resources
 
 4. Build and Run 
 ```bash
