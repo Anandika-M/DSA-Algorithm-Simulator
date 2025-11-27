@@ -43,7 +43,7 @@ The **DSA Learning Simulator** is an innovative desktop application built with J
 Before installing, ensure you have the following installed on your system:
 
 - Java Development Kit (JDK) 17 or higher
-- MongoDB Atlas account (free tier available) or local MongoDB instance**
+- MongoDB Atlas account (free tier available) or local MongoDB instance
 - Git for version control
 - Maven 3.6+ for dependency management
 
